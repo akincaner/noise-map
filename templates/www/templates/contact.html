@@ -1,45 +1,31 @@
-<div class="vertical-middle">
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">Contact Form</h2>
-            </div>
-            <div ng-controller="ContactController" class="panel-body">
-                <form ng-submit="submit(contactform)" name="contactform" class="form-horizontal" role="form">
-                    <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
-                        <label for="name" class="col-lg-2 control-label">Name</label>
-                        <div class="col-lg-10">
-                            <input ng-model="formData.name" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
-                        <label for="phone" class="col-lg-2 control-label">Phone</label>
-                        <div class="col-lg-10">
-                            <input ng-model="formData.phone" type="tel" class="form-control" id="inputPhone" name="inputPhone" placeholder="Your Phone" required>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
-                        <label for="email" class="col-lg-2 control-label">Email</label>
-                        <div class="col-lg-10">
-                            <input ng-model="formData.email" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
-                        <label for="message" class="col-lg-2 control-label">Message</label>
-                        <div class="col-lg-10">
-                            <textarea ng-model="formData.message" class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-default" ng-disabled="submitButtonDisabled">
-                                Send Message
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
-            </div>
-        </div>
-    </div>
-</div>
+
+   <div class="col-md-6 col-md-offset-3">
+      <!-- PAGE TITLE -->
+      <div class="page-header">
+         <h1><span class="glyphicon glyphicon-tower" style="font-size:20px"></span><span style="font-size:20px; margin-left:10px;">Bize Mail Gönderin</span></h1>
+      </div>
+      <!-- SHOW ERROR/SUCCESS MESSAGES -->
+      <div id="messages" class="well" ng-show="message"></div>
+      <!-- FORM -->
+      <form ng-submit="processForm()">
+         <!-- NAME -->
+         <div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }">
+            <label>İsim</label>
+            <input type="text" name="name" class="form-control" placeholder="İsim" ng-model="formData.name">
+            <span class="help-block" ng-show="errorName"></span>
+         </div>
+         <div id="superhero-group" class="form-group" ng-class="{ 'has-error' : errorSuperhero }">
+            <label>Email</label>
+            <input type="email" name="superheroAlias" class="form-control" placeholder="örnek@örnek.com" ng-model="formData.superheroAlias">
+            <span class="help-block" ng-show="errorSuperhero"></span>
+         </div>
+         <div id="content-group" class="form-group" ng-class="{ 'has-error' : errorContent }">
+            <label>Mesaj</label>
+            <textarea  rows="5" cols="50" class="form-control" placeholder="Mesaj" ng-model="formData.content"></textarea>
+            <span class="help-block" ng-show="errorContent"></span>
+         </div>
+         <button type="submit" class="btn btn-success btn-lg btn-block">
+         <span class="glyphicon glyphicon-flash"></span> Gönder!
+         </button>
+      </form>
+   </div>

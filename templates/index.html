@@ -7,23 +7,20 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/static/img/favicon.ico">
-
     <title>{{ PageTitle }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/fontawesome/css/font-awesome.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.0/jquery-confirm.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.0/jquery-confirm.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link href="/static/css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,41 +41,32 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Noise Map</a>
+            <a class="navbar-brand" href="#">NOISE MAP</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a ui-sref="home">Main</a></li>
-                <li><a ui-sref="about">Über</a></li>
-                <li><a ui-sref="login">Anmeldung</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Mein Konto<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li ng-if="user_id != ''"><a ui-sref="profile">Profil</a></li>
-                        <li ng-if="user_id != ''"><a ng-click="logout()">Logout</a></li>
-
-                    </ul>
-                </li>
+                <li class="active"><a ui-sref="home">Noise Map</a></li>
+                <li><a ui-sref="about">About Us</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right currencies">
-                <li><a ui-sref="contact">Kontakt</a></li>
+                <li><a ui-sref="contact">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-{% block content_holder %}{% endblock %}
+
+<ui-view></ui-view>
+
 </body>
 
-<script src="/static/lib/angular/angular.min.js"></script>
-<script src="/static/lib/angular/angular-ui-router.min.js"></script>
-<script src="/static/lib/angular/angular-recaptcha.js"></script>
-<script src="/static/lib/angular/angular-animate.js"></script>
-<script src="/static/lib/angular/angular-sanitize.js"></script>
-<script src="www/lib/angular/angular-cookies.js"></script>
-<script src="/static/lib/bootstrap/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
-<script src="/static/js/app.js"></script>
-<script src="/static/js/controllers.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-ui-router.min.js"></script>
+<script src="lib/angular/angular-route.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+<script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
 </html>

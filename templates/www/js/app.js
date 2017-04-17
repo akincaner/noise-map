@@ -1,4 +1,4 @@
-var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 'ui.bootstrap', 'ngCookies'])
+var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 'uiGmapgoogle-maps'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -8,7 +8,7 @@ var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 
         // HOME STATES AND NESTED VIEWS ========================================
             .state('home', {
                 url: '/home',
-                templateUrl: '/www/templates/home.html',
+                templateUrl: 'home.html',
                 controller: 'HomeController'
             })
 
@@ -16,9 +16,17 @@ var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 
             // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
             .state('contact', {
                 url: '/contact',
-                templateUrl: '/www/templates/contact.html',
+                templateUrl: 'contact.html',
                 controller: 'ContactController'
             });
 
 
+    })
+
+    .config(function (uiGmapGoogleMapApiProvider) {
+        uiGmapGoogleMapApiProvider.configure({
+            key: 'AIzaSyDzevUPWLEDQqFZI38x31H_IeJ6iWu61yo',
+            v: '3.17',
+            libraries: 'weather,geometry,visualization'
+        });
     });
