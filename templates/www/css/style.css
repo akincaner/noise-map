@@ -94,7 +94,7 @@ a:hover {
 }
 
 .navbar-default {
-    background-color: #000;
+    /*background-color: #000;*/
     border-color: transparent;
 }
 
@@ -117,7 +117,7 @@ a:hover {
     border: 17px solid transparent;
     border-bottom: 0;
     z-index: 1;
-    border-top-color: #1a1a1a;
+   /* border-top-color: #1a1a1a;*/
 }
 
 .btn-dark {
@@ -403,3 +403,7 @@ img.fwimg {
     color: red;
     font-size: 16px;
 }
+
+html, body { height: 100%; }
+
+.angular-google-map-container { height: 100vh; }

@@ -1,5 +1,30 @@
 <div id="map_canvas">
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+        <div ng-repeat="marker in Marker">
+            <div ng-if="100 > marker.window.title > 70">
+                <ui-gmap-circle radius="100" stroke="stroke_orange"
+                                fill="fill_orange"
+                                center="marker.coord">
+                    <ui-gmap-window>
+                    </ui-gmap-window>
+                </ui-gmap-circle>
+            </div>
+            <div ng-if="marker.window.title < 70">
+                <ui-gmap-circle radius="100" stroke="stroke_green"
+                                fill="fill_green"
+                                center="marker.coord">
 
+                    <ui-gmap-window>
+                    </ui-gmap-window>
+                </ui-gmap-circle>
+            </div>
+            <div ng-if="marker.window.title > 100">
+                <ui-gmap-circle radius="100" stroke="stroke_red"
+                             fill="fill_red"
+                             center="marker.coord">
+                </ui-gmap-circle>
+
+            </div>
+        </div>
     </ui-gmap-google-map>
 </div>

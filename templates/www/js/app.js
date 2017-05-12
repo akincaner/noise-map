@@ -12,6 +12,11 @@ var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 
                 controller: 'HomeController'
             })
 
+            .state('about', {
+                url: '/about',
+                templateUrl: 'about.html',
+                controller: 'AboutController'
+            })
 
             // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
             .state('contact', {
@@ -30,3 +35,5 @@ var StarterApp = angular.module('starter', ['starter.controllers', 'ui.router', 
             libraries: 'weather,geometry,visualization'
         });
     });
+
+
